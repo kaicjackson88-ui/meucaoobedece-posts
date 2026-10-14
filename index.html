@@ -1301,7 +1301,7 @@ function qMostra(){
   $('qRot').textContent='PERGUNTA '+(qi+1)+' DE '+Q.length;
   $('qNome').textContent=q.rot;
   var sel=R[q.id]||(q.multi?[]:null);
-  var h='<h2 class="qPerg">'+q.t+'</h2><p class="qSub">'+q.sub+'</p><div class="qOps">';
+  var h=(qi===0?'<div class="qSelo">DESCUBRA EM 1 MINUTO POR QUE SEU CÃO NÃO OBEDECE</div>':'')+'<h2 class="qPerg">'+q.t+'</h2><p class="qSub">'+q.sub+'</p><div class="qOps">';
   for(var k=0;k<q.ops.length;k++){
     var o=q.ops[k];
     var on=q.multi?(sel.indexOf(o.v)>=0):(sel===o.v);
@@ -1314,6 +1314,7 @@ function qMostra(){
   setTimeout(function(){ $('qTrilho').style.width=((qi+1)/Q.length*100)+'%'; },60);
   var ops=$('qPalco').querySelectorAll('.qOp');
   for(var k=0;k<ops.length;k++) ops[k].onclick=function(){
+    if(!qComecou){ qComecou=true; px('ViewContent',{content_name:'Quiz - inicio'}); }
     var v=this.dataset.v;
     if(q.multi){
       var arr=R[q.id]||[]; var idx=arr.indexOf(v);
@@ -1416,7 +1417,8 @@ var PARAMS_EXTRA='';
   var pular=/[?&]pular=1/.test(location.search);
   if(pular){ $('quiz').classList.add('fim'); return; }
   document.body.classList.add('travado');
-  qCapa();
+  /* vai direto pra pergunta 1 (a capa fazia ~70% sair sem tocar em nada); ?capa=1 mostra a capa antiga */
+  if(/[?&]capa=1/.test(location.search)) qCapa(); else { qi=0; qMostra(); }
 })();
 $('qPular').onclick=function(){ px('ViewContent',{content_name:'Quiz - pulado'}); fechaQuiz(); };
 
