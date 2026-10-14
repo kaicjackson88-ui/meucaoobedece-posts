@@ -1352,7 +1352,7 @@ function qResultado(){
   DORQUIZ=dor; NIVELQUIZ=Math.round(n);
 
   if(R.mordida==='sim'){                /* não bloqueia mais: segue pro diagnóstico com aviso de segurança */
-    px('Lead',{content_name:'Quiz | marcou mordida'});
+    pxc('QuizMordida',{content_name:'Quiz | marcou mordida'});
     PARAMS_EXTRA='&utm_source=quiz&utm_content=agressividade&aviso=aceito';
   }
 
@@ -1517,6 +1517,8 @@ if('IntersectionObserver' in window){
 var PROD={content_name:'Meu Cao Obedece - Protocolo 21 dias',content_ids:['mco-21d'],
   content_type:'product',value:37.00,currency:'BRL'};
 function px(evento,dados){ try{ if(window.fbq) fbq('track',evento,dados||{}); }catch(e){} }
+/* eventos próprios (não contam como Lead): assim Lead = só quem terminou o quiz */
+function pxc(evento,dados){ try{ if(window.fbq) fbq('trackCustom',evento,dados||{}); }catch(e){} }
 
 /* ViewContent: a pessoa passou do hero e está lendo de verdade */
 var viuConteudo=false;
@@ -1532,7 +1534,7 @@ addEventListener('scroll',function(){
   if(rolou50)return;
   var h=document.documentElement;
   if((h.scrollTop+innerHeight)/h.scrollHeight>=0.5){
-    rolou50=true; px('Lead',{content_name:'scroll 50%'});
+    rolou50=true; pxc('Scroll50',{content_name:'scroll 50%'});
   }
 },{passive:true});
 
