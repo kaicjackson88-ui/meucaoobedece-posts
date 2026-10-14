@@ -1123,7 +1123,7 @@ var DEPOIMENTOS=[
       +'<div style="flex:1;min-width:0"><div class="depNome">'+d.nome+'</div>'
       +'<div class="depMeta">'+(d.cao||'')+'</div></div>'
       +(d.tag?'<div class="depTag">'+d.tag+'</div>':'')+'</div>'
-      +(d.print?'<button class="depPrint" data-i="'+i+'"><img src="https://meucaoobedece.vercel.app/'+d.print+'" alt="Conversa com '+d.nome+'" decoding="async" loading="lazy"></button>'
+      +(d.print?'<button class="depPrint" data-i="'+i+'"><img src="'+(d.print.indexOf('data:')===0?d.print:'https://meucaoobedece.vercel.app/'+d.print)+'" alt="Conversa com '+d.nome+'" decoding="async" loading="lazy"></button>'
         +'<div class="depSelo">CONVERSA REAL — TOQUE PARA AMPLIAR</div>':'')
       +'</div>';
   }).join('');
@@ -1552,7 +1552,7 @@ function urlCheckout(){
   }catch(e){ return CHECKOUT; }
 }
 
-var botoes=document.querySelectorAll('.btn[data-cta]');   /* só os botões de compra */
+var botoes=document.querySelectorAll('a[data-cta]');   /* só os botões de compra */
 for(var i=0;i<botoes.length;i++){
   botoes[i].addEventListener('click',function(e){
     e.preventDefault();
