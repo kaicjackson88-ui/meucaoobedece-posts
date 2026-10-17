@@ -41,7 +41,7 @@ src="https://www.facebook.com/tr?id=1479327760890680&ev=PageView&noscript=1"
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <title>Meu Cão Obedece — Protocolo de 21 dias</title>
 <meta name="description" content="O protocolo de 15 minutos por dia que transforma um cão bagunceiro em um cão que obedece dentro de casa. Sem grito, sem enforcador, sem pagar adestrador.">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&family=Fraunces:opsz,wght@9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme:light only;
@@ -463,19 +463,121 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
   .rv,.rvL,.rvR,.rvZ{opacity:1;transform:none}
   #patas{display:none}
 }
+
+/* ══ QUIZ v2 (avaliação com fotos reais) ══ */
+#quiz{background:#F5F1E8;color:#1C1A17;font-family:'Work Sans',system-ui,sans-serif;display:block}
+#quiz,#quiz p,#quiz button{font-family:'Work Sans',system-ui,sans-serif;font-weight:400}
+#quiz .nqH,#quiz .nqNum,#quiz .nqHero h1,#quiz .nqRelTopo h2,#quiz .nqNivel h3,#quiz .nqSeg b{font-family:'Fraunces',Georgia,serif}
+#quiz .nqFicha{position:sticky;top:0;z-index:5;background:#F5F1E8;border-bottom:1px solid #E3DCCF}
+#quiz .nqIn{max-width:440px;margin:0 auto;padding:13px 18px 10px}
+#quiz .nqL{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5C564D;font-weight:600}
+#quiz .nqL b{color:#1C1A17;font-weight:700}
+#quiz .nqL>span{display:flex;gap:14px;align-items:center}
+#quiz .nqPular{font:inherit;color:#948C80;text-decoration:underline;text-underline-offset:3px;letter-spacing:.1em}
+#quiz .nqPassos{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-top:9px}
+#quiz .nqPassos i{height:3px;background:#E3DCCF;display:block}
+#quiz .nqPassos i.ok{background:#1C1A17}
+#quiz .nqPassos i.agora{background:#C9832E}
+#quiz .nqPalco{max-width:440px;margin:0 auto}
+#quiz .nqTela{padding:20px 18px 28px;animation:nqEntra .32s ease both}
+@keyframes nqEntra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#quiz .nqNum{font-family:'Fraunces',Georgia,serif;font-size:13px;color:#C9832E;font-weight:600}
+#quiz .nqH{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.015em;line-height:1.12;font-size:25px;margin-top:4px}
+#quiz .nqSub{color:#5C564D;font-size:14.5px;margin-top:8px;line-height:1.45}
+#quiz .nqHero{position:relative;margin:-20px -18px 14px;height:190px;overflow:hidden}
+#quiz .nqHero img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block}
+#quiz .nqHero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,26,23,0) 40%,rgba(28,26,23,.74))}
+#quiz .nqHero div{position:absolute;left:18px;right:18px;bottom:15px;z-index:2;color:#fff}
+#quiz .nqHero small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;font-weight:600}
+#quiz .nqHero h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:29px;line-height:1.1;margin-top:4px;color:#fff}
+#quiz .nqMeta{display:flex;gap:16px;font-size:12.5px;color:#5C564D;margin:0 0 12px;font-weight:500}
+#quiz .nqMeta span{display:flex;align-items:center;gap:6px}
+#quiz .nqMeta span:before{content:"";width:6px;height:6px;border-radius:50%;background:#1E5A4C}
+#quiz .nqThor{display:flex;gap:10px;align-items:flex-end;margin:16px 0 0}
+#quiz .nqThor .cd{width:52px;flex-shrink:0}
+#quiz .nqThor .cd svg{width:100%;height:auto;display:block}
+#quiz .nqThor p{background:#fff;border:1px solid #E3DCCF;border-radius:14px 14px 14px 3px;padding:10px 12px;font-size:13.5px;color:#5C564D;line-height:1.4}
+#quiz .nqThor p b{color:#1C1A17;font-weight:600}
+#quiz .nqThor.vivo p{border-color:#C9832E;background:#F8EBD9;color:#1C1A17}
+#quiz .nqGrade{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+#quiz .nqFoto{position:relative;background:#fff;border:1px solid #E3DCCF;text-align:left;overflow:hidden;padding:0;transition:transform .12s}
+#quiz .nqFoto img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#E3DCCF}
+#quiz .nqFoto span{display:block;padding:9px 10px 10px;font-size:13.5px;font-weight:600;line-height:1.25;min-height:52px;color:#1C1A17}
+#quiz .nqFoto:active{transform:scale(.98)}
+#quiz .nqFoto.sel{border-color:#1C1A17;box-shadow:inset 0 0 0 2px #1C1A17}
+#quiz .nqFoto.sel:after{content:"✓";position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;background:#1C1A17;color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+#quiz .nqFaixa{margin:14px 0 4px;height:150px;overflow:hidden;background:#E3DCCF}
+#quiz .nqFaixa img{width:100%;height:100%;object-fit:cover;display:block}
+#quiz .nqRegua{margin-top:22px;position:relative}
+#quiz .nqRegua .tr{position:absolute;left:12%;right:12%;top:13px;height:2px;background:#E3DCCF}
+#quiz .nqRegua .mc{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+#quiz .nqRegua button{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:0 2px}
+#quiz .nqRegua button i{width:28px;height:28px;border-radius:50%;background:#F5F1E8;border:2px solid #948C80;display:block;transition:.15s}
+#quiz .nqRegua button span{font-size:12.5px;line-height:1.25;color:#5C564D;font-weight:500}
+#quiz .nqRegua button.sel i{background:#1C1A17;border-color:#1C1A17;box-shadow:0 0 0 5px #F5F1E8,0 0 0 6px #1C1A17}
+#quiz .nqRegua button.sel span{color:#1C1A17;font-weight:700}
+#quiz .nqLista{margin-top:16px;border-top:1px solid #E3DCCF}
+#quiz .nqItem{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;padding:14px 2px;border-bottom:1px solid #E3DCCF}
+#quiz .nqItem .cx{width:22px;height:22px;border:1.5px solid #5C564D;flex-shrink:0;margin-top:1px;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff}
+#quiz .nqItem.radio .cx{border-radius:50%}
+#quiz .nqItem.sel .cx{background:#1C1A17;border-color:#1C1A17}
+#quiz .nqItem.sel .cx:after{content:"✓"}
+#quiz .nqItem.radio.sel .cx:after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+#quiz .nqItem b{display:block;font-weight:600;font-size:15px;color:#1C1A17}
+#quiz .nqItem small{display:block;color:#948C80;font-size:12.5px;margin-top:2px}
+#quiz .nqSeg{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid #1C1A17;margin-top:20px}
+#quiz .nqSeg button{padding:16px 6px;text-align:center;border-right:1.5px solid #1C1A17}
+#quiz .nqSeg button:last-child{border-right:0}
+#quiz .nqSeg b{display:block;font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:600;line-height:1;color:inherit}
+#quiz .nqSeg small{display:block;font-size:11.5px;color:#5C564D;margin-top:5px}
+#quiz .nqSeg button.sel{background:#1C1A17;color:#fff}
+#quiz .nqSeg button.sel small{color:#D8D2C7}
+#quiz .nqRodape{position:sticky;bottom:0;background:linear-gradient(180deg,rgba(245,241,232,0),#F5F1E8 30%);padding:16px 18px calc(16px + env(safe-area-inset-bottom))}
+#quiz .nqRodape.oculto{display:none}
+#quiz .nqBtn{display:block;width:100%;background:#1C1A17;color:#fff;padding:17px 18px;font-weight:600;font-size:16px;text-align:center;font-family:'Work Sans',sans-serif}
+#quiz .nqBtn.verde{background:#1E5A4C}
+#quiz .nqVoltar{display:block;margin:10px auto 0;font-size:12.5px;color:#948C80;text-decoration:underline;text-underline-offset:3px}
+#quiz .nqAnalise{padding:40px 22px;min-height:80vh;display:flex;flex-direction:column;justify-content:center}
+#quiz .nqChecks{margin-top:22px;border-top:1px solid #E3DCCF}
+#quiz .nqChecks div{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #E3DCCF;font-size:14.5px;color:#948C80;transition:color .2s}
+#quiz .nqChecks div.ok{color:#1C1A17}
+#quiz .nqChecks em{font-style:normal;font-size:12px;letter-spacing:.1em;font-weight:600}
+#quiz .nqChecks div.ok em{color:#1E5A4C}
+#quiz .nqRel{padding:0 0 30px;animation:nqEntra .4s ease both}
+#quiz .nqRelTopo{background:#1C1A17;color:#fff;padding:22px 18px 20px}
+#quiz .nqRelTopo small{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;font-weight:600}
+#quiz .nqRelTopo h2{font-family:'Fraunces',Georgia,serif;font-weight:600;color:#fff;font-size:28px;line-height:1.12;margin-top:6px}
+#quiz .nqRelTopo .ln{display:flex;gap:14px;align-items:center;margin-top:16px}
+#quiz .nqRelTopo .ln img{width:74px;height:74px;object-fit:cover;flex-shrink:0;display:block}
+#quiz .nqRelTopo .ln p{font-size:13.5px;color:#D8D2C7;line-height:1.4}
+#quiz .nqSec{padding:18px 18px 0}
+#quiz .nqRot{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#948C80;font-weight:700;margin-bottom:6px}
+#quiz .nqSec p,#quiz .nqCaixa p{font-size:15px;color:#1C1A17;line-height:1.5}
+#quiz .nqNivel h3{font-family:'Fraunces',Georgia,serif;font-size:21px;font-weight:600}
+#quiz .nqBarra{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;margin-top:8px}
+#quiz .nqBarra i{height:10px;background:#E3DCCF;display:block}
+#quiz .nqBarra i.on{background:#C9832E}
+#quiz .nqBarra.alto i.on{background:#A63D2A}
+#quiz .nqBarra.baixo i.on{background:#1E5A4C}
+#quiz .nqEnds{display:flex;justify-content:space-between;font-size:11.5px;color:#948C80;margin-top:5px}
+#quiz .nqCaixa{margin:18px 18px 0;border:1px solid #E3DCCF;background:#fff;padding:14px}
+#quiz .nqCaixa.alerta{border-color:#A63D2A;background:#F6E4DF}
+#quiz .nqCaixa.alerta .nqRot{color:#A63D2A}
+#quiz .nqDias{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+#quiz .nqDias span{font-size:12.5px;border:1px solid #1C1A17;padding:5px 8px;font-weight:600}
+#quiz .nqFotoRel{margin:20px 18px 0}
+#quiz .nqFotoRel img{width:100%;height:190px;object-fit:cover;display:block}
+#quiz .nqFotoRel figcaption{font-size:11.5px;color:#948C80;margin-top:6px}
+#quiz .nqAviso{font-size:11.5px;color:#948C80;padding:12px 18px 0;text-align:center}
 </style>
 </head>
 <body>
 <div id="quiz">
-  <div class="qTopo" id="qTopo" style="display:none">
-    <div class="w"><div class="qTopoIn">
-      <div class="qMini" id="qMini"></div>
-      <div class="qPasso"><b id="qRot">PERGUNTA 1 DE 6</b><span id="qNome"></span></div>
-      <button class="qPular" id="qPular">PULAR</button>
-    </div>
-    <div class="qTrilho"><i id="qTrilho"></i></div></div>
-  </div>
-  <div class="qCorpo"><div class="w" id="qPalco"></div></div>
+  <div class="nqFicha" id="qTopo"><div class="nqIn">
+    <div class="nqL"><b>Avaliação de comportamento</b><span><span id="nqConta">1 / 6</span><button class="nqPular" id="qPular">pular</button></span></div>
+    <div class="nqPassos" id="nqPassos"></div>
+  </div></div>
+  <div class="nqPalco" id="qPalco"></div>
 </div>
 
 <div class="diagFaixa" id="diagFaixa"><div class="w"><div class="diagIn">
@@ -1293,100 +1395,127 @@ function qCapa(){
   $('qPula2').onclick=function(){ px('ViewContent',{content_name:'Quiz - pulado'}); fechaQuiz(); };
 }
 
+/* ═══════ QUIZ v2: avaliação com fotos reais + Thor como guia ═══════ */
+var NQ={
+ dor:{tipo:'fotos',t:'O que ele mais faz que tira você do sério?',sub:'Toque no que mais pesa hoje. Só um.',
+  ops:[{v:'xixi',f:'xixi',t:'Xixi e cocô fora do lugar'},{v:'coleira',f:'coleira',t:'Puxa a guia no passeio'},
+       {v:'latido',f:'latido',t:'Late demais, principalmente na campainha'},{v:'chamar',f:'chamar',t:'Não vem quando eu chamo'},
+       {v:'visita',f:'visita',t:'Pula nas visitas'},{v:'sozinho',f:'sozinho',t:'Destrói coisas quando fica sozinho'}]},
+ tempo:{tipo:'regua',t:'Há quanto tempo isso acontece?',sub:'Hábito antigo pede mais repetição. Nada além disso.',foto:'janela',
+  ops:[{v:1,t:'Menos de 1 mês'},{v:2,t:'1 a 6 meses'},{v:3,t:'Mais de 6 meses'},{v:4,t:'Desde sempre'}]},
+ tentou:{tipo:'multi',t:'O que você já tentou?',sub:'Marque tudo o que já fez.',
+  ops:[{v:'gritar',t:'Brigar ou gritar depois que aconteceu'},{v:'tapete',t:'Jornal ou tapete higiênico'},{v:'video',t:'Vídeos soltos na internet',s:'YouTube, TikTok, Instagram'},
+       {v:'adestrador',t:'Adestrador ou consulta'},{v:'nada',t:'Ainda não tentei nada de verdade'}]},
+ idade:{tipo:'fotos',t:'Qual a idade dele?',sub:'Muda o tamanho de cada sessão, não o método.',
+  ops:[{v:1,f:'i1',t:'Até 6 meses'},{v:2,f:'i2',t:'6 meses a 2 anos'},{v:3,f:'i3',t:'2 a 8 anos'},{v:4,f:'i4',t:'Mais de 8 anos'}]},
+ minutos:{tipo:'seg',t:'Quanto tempo por dia dá para dedicar?',sub:'Seja realista. É isso que define o ritmo do plano.',foto:'treino',
+  ops:[{v:1,b:'<10',t:'minutos'},{v:2,b:'15',t:'minutos'},{v:3,b:'30+',t:'minutos'}]},
+ mordida:{tipo:'radio',t:'Ele já mordeu alguém a ponto de machucar?',sub:'Essa resposta muda a recomendação. Responda com sinceridade.',
+  ops:[{v:'nao',t:'Não, nunca'},{v:'quase',t:'Já rosnou ou tentou, mas não machucou'},{v:'sim',t:'Sim, já mordeu e machucou'}]}
+};
+var NQ_ORDEM=['dor','tempo','tentou','idade','minutos','mordida'];
+var NQ_FALA={
+ inicio:'Oi, eu sou o <b>Thor</b>. Vou montar o retrato do seu cão com você. São 6 perguntas.',
+ dor:{xixi:'Xixi fora do lugar quase nunca é <b>teimosia</b>. Já já te mostro o porquê.',coleira:'Quanto mais você puxa de volta, <b>mais ele puxa</b>. É reflexo.',
+  latido:'Latido de campainha é <b>alarme</b>, não birra.',chamar:'Ele te escuta. O que falta é <b>motivo pra vir</b>.',
+  visita:'Pular é <b>pedido de atenção</b>, e quase todo mundo paga esse pedido.',sozinho:'Destruir sozinho costuma ser <b>pânico</b>, não vingança.'},
+ tempo:{1:'Hábito novo. Costuma ceder mais rápido.',2:'Já virou rotina pra ele, mas ainda está fresco.',3:'Hábito instalado. Vai precisar de sequência.',4:'Desde sempre não quer dizer pra sempre. Quer dizer que ninguém <b>mudou a regra</b> ainda.'},
+ tentou:{gritar:'Brigar depois é o conselho mais repetido que existe. <b>Não é culpa sua</b>, mas ele não liga a bronca ao que fez.',video:'Vídeo solto ensina o comando, mas não a <b>ordem</b> certa das coisas.',adestrador:'Se ajudou um pouco e voltou, faltou rotina em casa, não esforço seu.',tapete:'O tapete ajuda, mas sem horário ele não sabe <b>quando</b> usar.',nada:'Ótimo: ele ainda não aprendeu a ignorar tentativas.'},
+ idade:{1:'Filhote aprende rápido. Sessões curtas, várias vezes.',2:'Fase de muita energia. Ótima idade pra treinar.',3:'Adulto aprende sim, só precisa de constância.',4:'Cão idoso aprende, no ritmo dele.'},
+ minutos:{1:'Dá pra trabalhar com duas sessões de 5 a 7 minutos.',2:'15 minutos é exatamente o que o plano pede.',3:'Folga de sobra. O plano pede 15.'},
+ mordida:{nao:'Ótimo. Seguimos.',quase:'Rosnado é aviso, e avisar é bom. Vou considerar isso.',sim:'Obrigado pela sinceridade. Isso muda a recomendação, e vou te dizer como.'}
+};
+var nqFala=null;
+function nqImg(f){ return 'q/'+f+'.jpg'; }
+function nqThor(txt,vivo){ return '<div class="nqThor'+(vivo?' vivo':'')+'"><div class="cd">'+mascote({itens:[],vivo:true})+'</div><p>'+txt+'</p></div>'; }
+function nqResp(id){ var v=R[id]; return id==='tentou'?(v&&v.length>0):v!==undefined; }
+function nqTopo(){
+  var p=''; for(var k=0;k<6;k++) p+='<i class="'+(k<qi?'ok':(k===qi?'agora':''))+'"></i>';
+  $('nqPassos').innerHTML=p; $('nqConta').textContent=Math.min(qi+1,6)+' / 6';
+}
+
 function qMostra(){
-  if(qi>=Q.length) return qCarrega();
-  var q=Q[qi];
-  $('qTopo').style.display='';
-  $('qMini').innerHTML=mascote({itens:[],vivo:true});
-  $('qRot').textContent='PERGUNTA '+(qi+1)+' DE '+Q.length;
-  $('qNome').textContent=q.rot;
-  var sel=R[q.id]||(q.multi?[]:null);
-  var h=(qi===0?'<div class="qSelo">DESCUBRA EM 1 MINUTO POR QUE SEU CÃO NÃO OBEDECE</div>':'')+'<h2 class="qPerg">'+q.t+'</h2><p class="qSub">'+q.sub+'</p><div class="qOps">';
-  for(var k=0;k<q.ops.length;k++){
-    var o=q.ops[k];
-    var on=q.multi?(sel.indexOf(o.v)>=0):(sel===o.v);
-    h+='<button class="qOp'+(on?' on':'')+'" data-v="'+o.v+'"><em>'+o.e+'</em><span>'+o.t+'</span>'+(q.multi?'<i>✓</i>':'')+'</button>';
-  }
-  h+='</div>';
-  if(q.multi) h+='<button class="qBtn" id="qSeguir"'+(sel.length?'':' disabled')+'>Continuar</button>';
-  if(qi>0) h+='<button class="qVoltar" id="qVoltar">← VOLTAR</button>';
-  qTela(h);
-  setTimeout(function(){ $('qTrilho').style.width=((qi+1)/Q.length*100)+'%'; },60);
-  var ops=$('qPalco').querySelectorAll('.qOp');
-  for(var k=0;k<ops.length;k++) ops[k].onclick=function(){
-    if(!qComecou){ qComecou=true; px('ViewContent',{content_name:'Quiz - inicio'}); }
-    var v=this.dataset.v;
-    if(q.multi){
-      var arr=R[q.id]||[]; var idx=arr.indexOf(v);
-      if(idx>=0) arr.splice(idx,1); else arr.push(v);
-      R[q.id]=arr; this.classList.toggle('on');
-      $('qSeguir').disabled=!arr.length;
-    } else {
-      R[q.id]=isNaN(v)?v:parseInt(v);
-      this.classList.add('on');
-      setTimeout(function(){ qi++; qMostra(); },240);
-    }
-  };
-  if($('qSeguir')) $('qSeguir').onclick=function(){ qi++; qMostra(); };
-  if($('qVoltar')) $('qVoltar').onclick=function(){ qi--; qMostra(); };
+  if(qi>=NQ_ORDEM.length) return qCarrega();
+  var id=NQ_ORDEM[qi], q=NQ[id], h='';
+  $('qTopo').style.display=''; nqTopo();
+  if(!R.tentou) R.tentou=[];
+  if(qi===0) h+='<div class="nqHero"><img src="'+nqImg('capa')+'" alt="Cão olhando para a câmera"><div><small>Avaliação gratuita · 1 minuto</small><h1>Por que ele não obedece você?</h1></div></div>'
+     +'<div class="nqMeta"><span>6 perguntas</span><span>Resultado na hora</span></div>';
+  else h+='<div class="nqNum">Pergunta 0'+(qi+1)+'</div>';
+  h+='<h2 class="nqH"'+(qi===0?' style="font-size:22px"':'')+'>'+q.t+'</h2><p class="nqSub">'+q.sub+'</p>';
+  if(q.foto) h+='<div class="nqFaixa"><img src="'+nqImg(q.foto)+'" alt=""></div>';
+  var sel=function(o){ return id==='tentou'?R.tentou.indexOf(o.v)>=0:R[id]===o.v; };
+  if(q.tipo==='fotos') h+='<div class="nqGrade">'+q.ops.map(function(o,k){ return '<button class="nqFoto'+(sel(o)?' sel':'')+'" data-k="'+k+'"><img src="'+nqImg(o.f)+'" alt="'+o.t+'"'+(qi===0&&k<2?'':' loading="lazy"')+'><span>'+o.t+'</span></button>'; }).join('')+'</div>';
+  else if(q.tipo==='regua') h+='<div class="nqRegua"><div class="tr"></div><div class="mc">'+q.ops.map(function(o,k){ return '<button class="'+(sel(o)?'sel':'')+'" data-k="'+k+'"><i></i><span>'+o.t+'</span></button>'; }).join('')+'</div></div>';
+  else if(q.tipo==='seg') h+='<div class="nqSeg">'+q.ops.map(function(o,k){ return '<button class="'+(sel(o)?'sel':'')+'" data-k="'+k+'"><b>'+o.b.replace('<','&lt;')+'</b><small>'+o.t+'</small></button>'; }).join('')+'</div>';
+  else h+='<div class="nqLista">'+q.ops.map(function(o,k){ return '<button class="nqItem'+(q.tipo==='radio'?' radio':'')+(sel(o)?' sel':'')+'" data-k="'+k+'"><span class="cx"></span><span><b>'+o.t+'</b>'+(o.s?'<small>'+o.s+'</small>':'')+'</span></button>'; }).join('')+'</div>';
+  h+=nqThor(nqFala||(qi===0?NQ_FALA.inicio:'Pode responder sem pensar muito. A primeira impressão costuma ser a certa.'),!!nqFala);
+  var corpo='<div class="nqTela">'+h+'</div><div class="nqRodape'+(nqResp(id)?'':' oculto')+'"><button class="nqBtn" id="qSeguir">'+(qi===5?'Ver meu resultado':'Continuar')+'</button>'+(qi>0?'<button class="nqVoltar" id="qVoltar">voltar</button>':'')+'</div>';
+  $('qPalco').innerHTML=corpo;
+  var bs=$('qPalco').querySelectorAll('[data-k]');
+  for(var k=0;k<bs.length;k++) bs[k].onclick=function(){ nqEscolhe(id,q,q.ops[+this.dataset.k]); };
+  $('qSeguir').onclick=function(){ if(!nqResp(id)) return; nqFala=null; qi++; qMostra(); $('quiz').scrollTop=0; };
+  if($('qVoltar')) $('qVoltar').onclick=function(){ nqFala=null; qi--; qMostra(); $('quiz').scrollTop=0; };
+}
+function nqEscolhe(id,q,o){
+  if(!qComecou){ qComecou=true; px('ViewContent',{content_name:'Quiz - inicio'}); }
+  var y=$('quiz').scrollTop;
+  if(id==='tentou'){
+    var a=R.tentou.slice(), p=a.indexOf(o.v);
+    if(o.v==='nada') a=p>=0?[]:['nada'];
+    else { a=a.filter(function(x){return x!=='nada'}); var j=a.indexOf(o.v); if(j>=0) a.splice(j,1); else a.push(o.v); }
+    R.tentou=a;
+    var ult=a.indexOf('gritar')>=0?'gritar':a[a.length-1];
+    nqFala=ult?NQ_FALA.tentou[ult]:null;
+  } else { R[id]=o.v; nqFala=(NQ_FALA[id]||{})[o.v]||null; }
+  qMostra(); $('quiz').scrollTop=y;
 }
 
 function qCarrega(){
   $('qTopo').style.display='none';
-  var f=['Analisando as suas respostas...','Cruzando com o padrão de comportamento...','Montando o seu diagnóstico...','Pronto!'];
-  qTela('<div class="qCarga"><div class="cd">'+mascote({olhar:2,itens:[],vivo:true})+'</div>'
-   +'<div class="qCargaTxt" id="qCargaTxt">'+f[0]+'</div>'
-   +'<div class="qTrilho" style="margin-top:16px"><i id="qCargaBar" style="width:25%"></i></div></div>');
-  var n=0;
-  var t=setInterval(function(){
-    n++;
-    if(n<f.length) $('qCargaTxt').textContent=f[n];
-    $('qCargaBar').style.width=((n+1)/f.length*100)+'%';
-    if(n>=f.length-1){ clearInterval(t); setTimeout(qResultado,650); }
-  },780);
+  var passos=['Comportamento principal','Tempo do hábito','O que já foi tentado','Idade e ritmo','Segurança'];
+  $('qPalco').innerHTML='<div class="nqAnalise"><div class="nqNum">Analisando</div><h2 class="nqH" style="font-size:24px">Cruzando as suas 6 respostas</h2>'
+   +'<div class="nqChecks">'+passos.map(function(p,k){ return '<div id="nqC'+k+'"><span>'+p+'</span><em>…</em></div>'; }).join('')+'</div>'
+   +nqThor('Só um instante. Estou montando o seu relatório.')+'</div>';
+  $('quiz').scrollTop=0;
+  var k=0, t=setInterval(function(){ var c=$('nqC'+k); c.className='ok'; c.querySelector('em').textContent='OK'; k++;
+    if(k>=passos.length){ clearInterval(t); setTimeout(qResultado,500); } },520);
 }
 
 function qResultado(){
   var n=nivel(), dor=R.dor||'chamar', d=DIAG[dor];
   px('Lead',{content_name:'Quiz concluido | dor: '+dor+' | nivel: '+Math.round(n)});
   DORQUIZ=dor; NIVELQUIZ=Math.round(n);
-
-  if(R.mordida==='sim'){                /* não bloqueia mais: segue pro diagnóstico com aviso de segurança */
-    pxc('QuizMordida',{content_name:'Quiz | marcou mordida'});
-    PARAMS_EXTRA='&utm_source=quiz&utm_content=agressividade&aviso=aceito';
-  }
-
-  var cor=n<3.5?'var(--teal)':(n<6.5?'var(--ouro)':'var(--verm)');
-  var rot=n<3.5?'Recente':(n<6.5?'Instalado':'Enraizado');
+  if(R.mordida==='sim'){ pxc('QuizMordida',{content_name:'Quiz | marcou mordida'}); }
+  var op=NQ.dor.ops.filter(function(o){return o.v===dor})[0];
+  var nb=Math.max(1,Math.min(10,Math.round(n)));
+  var cls=n<3.5?'baixo':(n<6.5?'':'alto'), rot=n<3.5?'Recente':(n<6.5?'Instalado':'Enraizado');
   var nota=n<3.5?'Hábito ainda novo. Com rotina e repetição diária, costuma ceder rápido.'
-    :(n<6.5?'O comportamento já virou hábito, mas responde bem quando entra sequência e horário fixo.'
-    :'Hábito antigo e reforçado sem querer. Precisa de consistência diária — e é por isso que tentativa solta não funcionou até agora.');
-  var minutos=R.minutos===1?'Você marcou menos de 10 minutos por dia. Dá para trabalhar: o protocolo divide em duas sessões de 7 minutos.'
-    :(R.minutos===3?'Com 30 minutos por dia você tem folga de sobra — o protocolo pede 15.'
-    :'Quinze minutos por dia é exatamente o que o protocolo pede.');
+    :(n<6.5?'Já virou hábito, mas responde bem quando entra sequência e horário fixo.'
+    :'Hábito antigo e reforçado sem querer. Precisa de constância diária, e é por isso que tentativa solta não funcionou até agora.');
+  var min=R.minutos===1?'Menos de 10 minutos dá: o plano divide em duas sessões curtas.'
+    :(R.minutos===3?'Com 30 minutos você tem folga. O plano pede 15.':'15 minutos por dia é exatamente o que o plano pede.');
+  var barra=''; for(var k=0;k<10;k++) barra+='<i class="'+(k<nb?'on':'')+'"></i>';
   var extra='';
-  if((R.tentou||[]).indexOf('gritar')>=0)
-    extra='<div class="qBloco"><b>UM PONTO IMPORTANTE</b><p>Você marcou que já tentou gritar ou brigar depois do fato. Não é culpa sua — é o conselho mais repetido que existe. Mas o cão não liga a bronca ao que fez minutos antes: ele só aprende que às vezes você fica assustador. Parar com isso costuma melhorar o comportamento sozinho, antes mesmo do treino.</p></div>';
-  if(R.mordida==='sim')
-    extra+='<div class="qBloco" style="border-color:var(--verm);background:var(--verm2)"><b style="color:var(--verm)">IMPORTANTE SOBRE A MORDIDA</b><p>Como ele já mordeu e machucou, o ideal é ter também uma avaliação presencial com um veterinário comportamentalista ou um adestrador especializado. O protocolo trabalha obediência, rotina e autocontrole — ajuda muito no dia a dia, mas não substitui esse acompanhamento em casos de agressividade. Comece pelos comandos base, mantenha distância de visitas e crianças nos treinos e nunca force contato.</p></div>';
-  if(R.mordida==='quase')
-    extra+='<div class="qBloco"><b>ATENÇÃO</b><p>Ele já rosnou ou tentou avançar. Rosnado é aviso — e aviso é bom, significa que ele avisa antes. Trabalhe distância com cuidado e, se em duas semanas não houver melhora, procure um comportamentalista.</p></div>';
-
-  qTela('<div style="text-align:center"><div class="qResDog">'+mascote({olhar:3,itens:[],vivo:true})+'</div>'
-   +'<div class="qSelo">SEU DIAGNÓSTICO</div>'
-   +'<h2 class="qPerg" style="margin-top:8px">'+d.titulo+'</h2></div>'
-   +'<div class="qMed"><div class="qMedTopo"><b>NÍVEL DO HÁBITO</b><span>'+rot+'</span></div>'
-   +'<div class="qMedBar"><i id="qMedBar" style="background:'+cor+'"></i></div>'
-   +'<p class="qBloco" style="border:0;background:transparent;padding:11px 0 0;margin:0;font-size:13.5px;color:var(--ink2);font-weight:600">'+nota+'</p></div>'
-   +'<div class="qBloco tea"><b>O QUE ESTÁ ACONTECENDO</b><p>'+d.oq+'</p></div>'
-   +'<div class="qBloco"><b>POR QUE NÃO RESOLVEU ATÉ AGORA</b><p>'+d.pq+'</p></div>'
-   + extra
-   +'<div class="qBloco tea"><b>O QUE RESOLVE NO SEU CASO</b><p>'+d.resolve+'</p>'
-   +'<div class="qDias">'+d.dias.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div></div>'
-   +'<div class="qBloco"><b>SEU TEMPO DISPONÍVEL</b><p>'+minutos+'</p></div>'
-   +'<button class="qBtn" id="qVer" style="margin-top:22px">Ver o protocolo que resolve isso</button>');
-  setTimeout(function(){ $('qMedBar').style.width=Math.max(12,n*10)+'%'; },250);
-  $('qVer').onclick=function(){ quizFeito=true; fechaQuiz(); };
+  if((R.tentou||[]).indexOf('gritar')>=0) extra+='<div class="nqCaixa"><div class="nqRot">Um ponto importante</div><p>Você marcou que já brigou depois do fato. É o conselho mais repetido que existe, então não é culpa sua. Mas ele não liga a bronca ao que fez minutos antes. Parar com isso já é metade do caminho.</p></div>';
+  if(R.mordida==='sim') extra+='<div class="nqCaixa alerta"><div class="nqRot">Sobre a mordida</div><p>Como ele já mordeu e machucou, o ideal é ter também uma avaliação presencial com um veterinário comportamentalista ou adestrador especializado. O plano ajuda na rotina, mas não substitui esse acompanhamento.</p></div>';
+  if(R.mordida==='quase') extra+='<div class="nqCaixa"><div class="nqRot">Atenção</div><p>Rosnado é aviso, e aviso é bom. Trabalhe distância com cuidado e, se em duas semanas não melhorar, procure um comportamentalista.</p></div>';
+  $('qPalco').innerHTML='<div class="nqRel"><div class="nqRelTopo"><small>Relatório do seu cão</small><h2>'+d.titulo+'</h2>'
+   +'<div class="ln"><img src="'+nqImg(op.f)+'" alt=""><p>Comportamento principal: <b style="color:#fff">'+op.t.toLowerCase()+'</b>.</p></div></div>'
+   +'<div class="nqSec nqNivel"><div class="nqRot">Nível do hábito</div><h3>'+rot+'</h3><div class="nqBarra '+cls+'">'+barra+'</div><div class="nqEnds"><span>recente</span><span>enraizado</span></div><p style="margin-top:10px;font-size:14px;color:#5C564D">'+nota+'</p></div>'
+   +'<div class="nqSec"><div class="nqRot">O que está acontecendo</div><p>'+d.oq+'</p></div>'
+   +'<div class="nqSec"><div class="nqRot">Por que não resolveu até agora</div><p>'+d.pq+'</p></div>'
+   +extra
+   +'<div class="nqCaixa"><div class="nqRot">O que resolve no seu caso</div><p>'+d.resolve+'</p><div class="nqDias">'+d.dias.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div></div>'
+   +'<div class="nqSec"><div class="nqRot">Seu tempo disponível</div><p>'+min+'</p></div>'
+   +'<figure class="nqFotoRel"><img src="'+nqImg('abraco')+'" alt="Tutor abraçando o cão" loading="lazy"><figcaption>Foto ilustrativa.</figcaption></figure>'
+   +'<div class="nqSec">'+nqThor('Montei um plano de <b>21 dias, 15 minutos por dia</b>, começando pelo que pesa mais no seu caso.',true)+'</div>'
+   +'<div class="nqRodape"><button class="nqBtn verde" id="qVer">Ver o plano para o meu cão</button><button class="nqVoltar" id="nqRefaz">refazer a avaliação</button></div>'
+   +'<p class="nqAviso">Resultados variam de cão para cão.</p></div>';
+  $('quiz').scrollTop=0;
+  if(R.mordida==='sim') PARAMS_EXTRA='&utm_source=quiz&utm_content=agressividade&aviso=aceito';
+  $('qVer').onclick=function(){ quizFeito=true; fechaQuiz(); if(R.mordida==='sim') PARAMS_EXTRA='&utm_source=quiz&utm_content=agressividade&aviso=aceito'; };
+  $('nqRefaz').onclick=function(){ R={tentou:[]}; qi=0; nqFala=null; qMostra(); $('quiz').scrollTop=0; };
 }
 
 var DORQUIZ=null, NIVELQUIZ=null;
@@ -1418,7 +1547,7 @@ var PARAMS_EXTRA='';
   if(pular){ $('quiz').classList.add('fim'); return; }
   document.body.classList.add('travado');
   /* vai direto pra pergunta 1 (a capa fazia ~70% sair sem tocar em nada); ?capa=1 mostra a capa antiga */
-  if(/[?&]capa=1/.test(location.search)) qCapa(); else { qi=0; qMostra(); }
+  qi=0; qMostra();
 })();
 $('qPular').onclick=function(){ px('ViewContent',{content_name:'Quiz - pulado'}); fechaQuiz(); };
 
